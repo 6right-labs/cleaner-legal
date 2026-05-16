@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy — ScanQuick</title>
+    <title>Privacy Policy — CleanQuick</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -45,7 +45,7 @@
             margin-bottom: 12px;
         }
         li { margin-bottom: 6px; }
-        a { color: #4A9893; text-decoration: none; }
+        a { color: #0BB4FE; text-decoration: none; }
         a:hover { text-decoration: underline; }
         .footer {
             margin-top: 48px;
@@ -59,64 +59,74 @@
 <body>
     <div class="container">
         <h1>Privacy Policy</h1>
-        <p class="subtitle">ScanQuick: PDF Scanner & OCR &mdash; Last updated: April 18, 2026</p>
+        <p class="subtitle">CleanQuick: Storage Cleaner &mdash; Last updated: May 16, 2026</p>
 
-        <p>MIDAS DIGITAL LAB, MChJ ("we", "us", "our") operates the ScanQuick mobile application. This Privacy Policy explains what information the app accesses, how it is used, and the choices you have.</p>
+        <p>MIDAS DIGITAL LAB, MChJ ("we", "us", "our") operates the CleanQuick mobile application. This Privacy Policy explains what information the app accesses, how it is used, and the choices you have.</p>
 
         <h2>1. Information We Do Not Collect</h2>
-        <p>ScanQuick is designed with privacy at its core. We do <strong>not</strong> collect, transmit, or store any personal data on external servers. All document scanning, OCR text extraction, image processing, and file conversion happen entirely on your device.</p>
+        <p>CleanQuick is designed with privacy at its core. We do <strong>not</strong> collect, transmit, or store any personal data on external servers. All photo and video analysis, duplicate detection, contact and calendar inspection, and email filtering happen entirely on your device.</p>
         <p>We do not use analytics services, tracking pixels, advertising SDKs, or any form of behavioral profiling.</p>
 
         <h2>2. Data Stored on Your Device</h2>
         <p>The following data is stored locally on your device using the app's sandboxed storage and is never sent to us:</p>
         <ul>
-            <li>Scanned documents, photos, and processed images</li>
-            <li>OCR-extracted text</li>
-            <li>Folder structure and file metadata</li>
-            <li>App preferences and settings (theme, scan quality, etc.)</li>
-            <li>PIN lock data (if enabled by you)</li>
+            <li>App preferences and settings (selected tab, scan flags, premium state, etc.)</li>
+            <li>Cached metadata about your photo and video library used for duplicate and similar-item detection</li>
+            <li>Connected email account metadata (provider, email address) and per-account message cache</li>
+            <li>Onboarding completion flag and daily Photo Swipe usage counter</li>
         </ul>
-        <p>You can delete all app data at any time through the app's settings or by uninstalling the app.</p>
+        <p>You can delete all app data at any time by uninstalling the app, which removes the sandbox storage and Keychain entries described below.</p>
 
-        <h2>3. Camera and Photo Library</h2>
-        <p>ScanQuick requests access to your device's camera to scan documents and to your photo library to import images. These permissions are used solely for scanning and importing — captured images are processed and stored locally on your device. No images are uploaded to any server.</p>
+        <h2>3. Photo Library</h2>
+        <p>CleanQuick requests access to your device's photo library to scan photos and videos so you can review and remove duplicates, similar items, large files, and unused media. All analysis happens locally on your device. No photos or videos are uploaded to any server, transmitted off-device, or shared with us or any third party.</p>
+        <p>Removed items are deleted via Apple's standard photo library APIs after your explicit confirmation. CleanQuick never deletes media without your action.</p>
 
-        <h2>4. Cloud Sync (Optional)</h2>
-        <p>If you choose to enable Google Drive sync, the app will:</p>
+        <h2>4. Contacts</h2>
+        <p>If you use the Contact Cleaner feature, CleanQuick reads your contacts to detect duplicates and incomplete entries. Contact data is processed entirely on your device and is not transmitted off-device. Merges and deletions are performed via Apple's standard Contacts APIs only after your explicit confirmation.</p>
+
+        <h2>5. Calendars</h2>
+        <p>If you use the Calendar Cleaner feature, CleanQuick reads events from your calendars (including subscribed calendars such as Holidays and Birthdays) to help you remove old or unwanted events. Calendar data is processed entirely on your device and is not transmitted off-device. Event deletions are performed via Apple's standard Calendar APIs only after your explicit confirmation.</p>
+
+        <h2>6. Email Accounts (Optional)</h2>
+        <p>If you connect an email account (currently iCloud and Gmail) in the Email tab, CleanQuick connects directly to the provider's IMAP server over TLS to list, sort, and delete or mark messages on your behalf. Specifically:</p>
         <ul>
-            <li>Authenticate via Google Sign-In (handled by Google's SDK)</li>
-            <li>Request access only to files created by ScanQuick in your Google Drive (limited <code>drive.file</code> scope)</li>
-            <li>Upload your scanned documents to a dedicated ScanQuick folder in your Google Drive</li>
+            <li>You provide an <strong>app-specific password</strong> generated by Apple (for iCloud) or Google (for Gmail). The app never asks for your main account password.</li>
+            <li>The app-specific password is stored in the device's Keychain under the bundle identifier <code>com.midasdigitallab.cleanquick.imap</code> and is never transmitted anywhere except directly to the IMAP server you authorized.</li>
+            <li>Message previews and metadata (sender, subject, size, headers) are cached locally to render lists quickly. The cache lives in the app's sandboxed storage and is removed when you sign out of the account or uninstall the app.</li>
+            <li>We do not see, store, or proxy any of your email content on our servers. There is no backend.</li>
         </ul>
-        <p>Your Google authentication token is stored locally on your device. We do not have access to your Google account credentials or any files outside the ScanQuick folder. Google's use of your data is governed by <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a>.</p>
+        <p>You can disconnect any email account at any time from the Email tab; doing so removes the corresponding Keychain entry and local cache.</p>
 
-        <h2>5. Subscriptions and Payments</h2>
-        <p>ScanQuick offers optional paid subscriptions (monthly and yearly) processed entirely through Apple's App Store. We use RevenueCat as a subscription management service to:</p>
+        <h2>7. Subscriptions and Payments</h2>
+        <p>CleanQuick offers optional paid subscriptions (monthly and yearly) processed entirely through Apple's App Store. We use RevenueCat as a subscription management service to:</p>
         <ul>
             <li>Verify your subscription status</li>
             <li>Manage subscription entitlements</li>
         </ul>
-        <p>RevenueCat receives an anonymous app user identifier and subscription transaction data from Apple. It does not receive your name, email, or any document content. For details, see <a href="https://www.revenuecat.com/privacy" target="_blank">RevenueCat's Privacy Policy</a>.</p>
+        <p>RevenueCat receives an anonymous app user identifier and subscription transaction data from Apple. It does not receive your name, email, or any of your personal media, contacts, calendar events, or email content. For details, see <a href="https://www.revenuecat.com/privacy" target="_blank">RevenueCat's Privacy Policy</a>.</p>
         <p>We do not process any payment information directly. All billing is handled by Apple. See <a href="https://www.apple.com/legal/privacy/" target="_blank">Apple's Privacy Policy</a> for details.</p>
 
-        <h2>6. Children's Privacy</h2>
-        <p>ScanQuick is not directed at children under 13. We do not knowingly collect any personal information from children.</p>
+        <h2>8. Notifications</h2>
+        <p>If you allow notifications, CleanQuick may send you an occasional local reminder (for example, a weekly storage cleanup reminder). Notifications are scheduled locally on your device using Apple's UserNotifications framework. No push servers or remote notification services are involved.</p>
 
-        <h2>7. Data Security</h2>
-        <p>Since your data remains on your device, security depends on your device's own protections (passcode, Face ID, Touch ID). ScanQuick also offers an optional PIN lock feature for additional in-app protection. We recommend keeping your device software up to date.</p>
+        <h2>9. Children's Privacy</h2>
+        <p>CleanQuick is not directed at children under 13. We do not knowingly collect any personal information from children.</p>
 
-        <h2>8. Third-Party Services</h2>
+        <h2>10. Data Security</h2>
+        <p>Since your data remains on your device, security depends on your device's own protections (passcode, Face ID, Touch ID). Email app-specific passwords are stored in the device Keychain with the same protection class iOS uses for system credentials. We recommend keeping your device software up to date.</p>
+
+        <h2>11. Third-Party Services</h2>
         <p>The app integrates the following third-party services:</p>
         <ul>
             <li><strong>RevenueCat</strong> — subscription status management (anonymous identifier only)</li>
-            <li><strong>Google Sign-In</strong> — authentication for optional Google Drive sync (only when you enable sync)</li>
+            <li><strong>Apple iCloud IMAP and Gmail IMAP</strong> — only when you explicitly connect an email account; the app talks directly to these IMAP servers over TLS</li>
         </ul>
         <p>No other third-party services, analytics, or advertising frameworks are used.</p>
 
-        <h2>9. Changes to This Policy</h2>
+        <h2>12. Changes to This Policy</h2>
         <p>We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated "Last updated" date. Continued use of the app after changes constitutes acceptance of the revised policy.</p>
 
-        <h2>10. Contact Us</h2>
+        <h2>13. Contact Us</h2>
         <p>If you have questions about this Privacy Policy or your data, contact us at:</p>
         <p><a href="mailto:apps@midasdigitallab.com">apps@midasdigitallab.com</a></p>
 
